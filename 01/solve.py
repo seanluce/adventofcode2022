@@ -1,5 +1,5 @@
-data = open("./01/input.txt","r")
-rows = data.readlines()
+with open('./01/input.txt') as data:
+    rows = data.readlines()
 
 elfArray = []
 elfTotal = 0
