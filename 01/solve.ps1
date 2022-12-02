@@ -2,7 +2,6 @@ $data = Get-Content ./01/input.txt
 
 $elfArray = @()
 $elfTotal = 0
-$mostCalories = 0
 
 foreach($row in $data){
     if($row -ne ''){
