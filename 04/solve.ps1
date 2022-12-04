@@ -58,20 +58,7 @@ foreach($row in $data){
     for($j = [int]$secondPair[0]; $j -le [int]$secondPair[1]; $j++){
         $secondSet += $j
     }
-    foreach($element in $firstSet){
-        if($element -in $secondSet){
-            $firstInSecond = $true
-            break
-        }
-    }
-    foreach($element in $secondSet){
-        if($element -in $firstSet){
-            $firstInSecond = $true
-            break
-        }
-    }
-    if($firstInSecond -eq $true -or $secondInFirst -eq $true){
-        Write-Host "Duplicate work detected."
+    if($firstSet | Where-Object{$secondSet -contains $_}){
         $output += 1
     }
 }
